@@ -98,11 +98,9 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func percent(_ sender: Any) {
-        if re == 1{
-            result.text = "9"
-        }else{
-            result.text = result.text! + "9"
-        }
+        c = Double(result.text!)!
+        result1.text = result.text! + "%"
+        result.text = String(c * 0.01)
     }
     @IBAction func point(_ sender: Any) {
         if(judge==0)
