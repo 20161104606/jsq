@@ -126,6 +126,14 @@ class ViewController: UIViewController {
         result.text = ""
         judge = 0
         equal1 = 1
+        var clear:String = result.text!
+        while clear.last == "o"{
+            clear.removeLast()
+        }
+        while clear.last == "."{
+            clear.removeLast()
+        }
+        result.text = clear
     }
     @IBAction func add(_ sender: Any) {
         if(equal1 == 0)
@@ -207,4 +215,3 @@ class ViewController: UIViewController {
     }
     
 }
-
