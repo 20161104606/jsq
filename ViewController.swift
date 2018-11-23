@@ -108,6 +108,13 @@ class ViewController: UIViewController {
             result.text = result.text! + "."
             judge=1
         }
+        if result.text!.contains("."){
+            result.text = result.text!
+        }
+        else{
+            result.text = result.text! + "."
+            judge = 1
+        }
     }
     @IBAction func equal(_ sender: Any) {
         x2 = Double(result.text!)!
@@ -126,14 +133,7 @@ class ViewController: UIViewController {
         result.text = ""
         judge = 0
         equal1 = 1
-        var clear:String = result.text!
-        while clear.last == "o"{
-            clear.removeLast()
-        }
-        while clear.last == "."{
-            clear.removeLast()
-        }
-        result.text = clear
+       
     }
     @IBAction func add(_ sender: Any) {
         if(equal1 == 0)
