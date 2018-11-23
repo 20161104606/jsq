@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var result1: UILabel!
     @IBOutlet weak var result: UILabel!
-    
     var re=0
     var add = 0
     var judge = 0
@@ -128,13 +127,22 @@ class ViewController: UIViewController {
         }else if number == 4 {
             x3 = x1 / (x2)
         }
-        result1.text=String(format:"%.5f",x3)
+        result1.text=String(format:"%.10f",x3)
+        while(result1.text?.last == "0")
+        {
+            result1.text?.removeLast()
+        }
+        if(result1.text?.last == ".")
+        {
+            result1.text?.removeLast()
+        }
         
         result.text = ""
         judge = 0
         equal1 = 1
-       
-    }
+        
+        }
+    
     @IBAction func add(_ sender: Any) {
         if(equal1 == 0)
         {
